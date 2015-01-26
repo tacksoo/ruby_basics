@@ -26,24 +26,50 @@ b = true # or false
 # string
 s = "ruby is cool"
 
+# access characters in a string with bracket notation
+puts s[0]
+
+# negative indices indicate chars from the back
+puts s[-1]
+
+# string slicing
+puts s[0..3]
+
 # string interpolation
 puts "#{s}, ain't it?"
 
 # string formatting 
 puts "Gwinnett has 6%% tax rate: e.g. $2.50 bill comes to $%.2f %s" % [ 2.5*0.06+2.5, "total" ]
 
+# string has lots of methods like reverse
+puts s.reverse
+
+# methods ending with ! changes the variable 
+# source code is in C: http://www.opensource.apple.com/source/ruby/ruby-83.4/ruby/string.c
+# documentation for all string methods: http://www.ruby-doc.org/core-2.2.0/String.html
+puts s.reverse!
+
+# range
+(1..42).class
+
 # arrays
-a = [ 1, 2, 3 ]
+a = [ 3, 2, 1 ]
+
+# sort array
+a.sort!
+
+# array with strings
+a = [ "ichi", "ni", "san" ]
+
+# convenient way to create an array of string
+a = %w{ ichi ni san shi go } 
+
+# the split method in string returns an array
+a = s.split
 
 # hashes
-h = [ :one => "uno", :two => "dos", :thress => "tres" ]
+h = [ :one => "uno", :two => "dos", :three => "tres" ]
 
 # the following is the same of above 
 h = [ one: "uno", two: "dos", three: "tres" ]
 
-
-
-
-
-
- 
