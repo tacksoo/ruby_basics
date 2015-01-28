@@ -55,6 +55,10 @@ puts s.reverse!
 # arrays
 a = [ 3, 2, 1 ]
 
+# cool array subtraction trick
+b = [ 3, 2 ]
+puts a - b
+
 # sort array
 a.sort!
 
@@ -72,4 +76,15 @@ h = [ :one => "uno", :two => "dos", :three => "tres" ]
 
 # the following is the same of above 
 h = [ one: "uno", two: "dos", three: "tres" ]
+
+# A constant from Object (root of all Ruby objects)
+# http://ruby-doc.org/core-2.2.0/Object.html
+# ARGV should be an empty array if you did not pass in any command line args
+puts ARGV
+
+# any variable starting with a dollar sign is a global variable 
+puts "Enter a nice word: "
+word = $stdin.gets
+puts word
+
 
