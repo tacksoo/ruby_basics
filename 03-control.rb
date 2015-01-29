@@ -33,3 +33,27 @@ rainy = false
 unless rainy  
   puts "it is not raining outside!"
 end
+
+room_temp = 67
+# case statement with numbers
+case room_temp
+when 69
+  puts "Room is a little warm but okay"
+when 68
+  puts "Room feels just right"
+when 67
+  puts "Room is a little chilly but okay"
+else
+  puts "Room is too hot or too cold"
+end
+
+season  = "spring"
+# case statement with string
+case season
+when "spring"
+  puts "Yay Basketball!"
+when "fall"
+  puts "Yay Football"
+else
+  puts "Yay Baseball"
+end
