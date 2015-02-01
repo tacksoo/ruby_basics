@@ -18,3 +18,22 @@ puts /a\.c/ =~ "a.c aaa bbb abb abc"  # matches "a.c"
 # modifier, i, allows for ignoring case
 puts /dos/i =~ "uno DOS tres" # match "DOS"
 
+# the !~ does the opposite of =~
+puts /saturday/ !~ "caturday"
+
+# strings come with sub() and gsub() 
+msg = "na na na na na na na na batman"
+# sub() just changes the first occurence 
+puts msg.sub(/na/,"la")
+# gsub() changes all occurences
+puts msg.gsub(/na/,"la")
+# sub!() makes changes to the string itself
+puts msg.sub!(/na/,"la")
+# gsub!() 
+puts msg.gsub!(/na/,"la")
+puts msg
+
+# character set
+word = "saturday"
+puts word.gsub(/[aeiou]/,"x")
+
