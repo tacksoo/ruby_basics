@@ -33,7 +33,30 @@ puts msg.sub!(/na/,"la")
 puts msg.gsub!(/na/,"la")
 puts msg
 
-# character set
+# character sets match charaters in brackets
 word = "saturday"
 puts word.gsub(/[aeiou]/,"x")
 
+# the ^ symbol changes it to everythin but these chars
+puts word.gsub(/[^aeiou]/,"x")
+
+# short cut for commom sets
+# \d any digit 
+# \D any non-digit
+# \w any word character (letter, number, underscore)
+# \W any non-word character
+# \s any whitespace character (space, tab, newline)
+# \S any non-whitespace character
+
+# the split() method on string accepts regexs
+# be careful not to forget the backslash character
+puts "sundays  are  so    relaxing".split(/\s+/).to_s
+
+# + means at least one character
+# ? means one or zero character
+# * means zero or more characters
+
+# the scan() method in strings returns the matches in an array
+sentence = "I used to live in 30303 but now I live in 30043"
+zipcodes = sentence.scan(/\d{5}/)
+puts zipcodes.to_s
