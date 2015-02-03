@@ -72,10 +72,10 @@ a = %w{ ichi ni san shi go }
 a = s.split
 
 # hashes
-h = [ :one => "uno", :two => "dos", :three => "tres" ]
+h = { :one => "uno", :two => "dos", :three => "tres" }
 
 # the following is the same of above 
-h = [ one: "uno", two: "dos", three: "tres" ]
+h = { one: "uno", two: "dos", three: "tres" }
 
 # A constant from Object (root of all Ruby objects)
 # http://ruby-doc.org/core-2.2.0/Object.html
@@ -87,4 +87,19 @@ puts "Enter a nice word: "
 word = $stdin.gets
 puts word
 
+# eql?
+# notice that the following two variables are two different objs with different object_id
+x = "tuesday"
+y = "tuesday"
+puts x.object_id
+puts y.object_id
 
+# x and y both return the same hash values
+puts x.hash
+puts y.hash
+
+# eql? method returns true on same hash value
+puts x.eql? y   # true
+
+# equal? method returns true on same object_id value
+puts x.equal? y   # false
