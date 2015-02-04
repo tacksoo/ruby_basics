@@ -60,3 +60,6 @@ puts "sundays  are  so    relaxing".split(/\s+/).to_s
 sentence = "I used to live in 30303 but now I live in 30043"
 zipcodes = sentence.scan(/\d{5}/)
 puts zipcodes.to_s
+
+# use parentheses to capture groups 
+

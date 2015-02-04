@@ -103,3 +103,18 @@ puts x.eql? y   # true
 
 # equal? method returns true on same object_id value
 puts x.equal? y   # false
+
+# symbols are lightweight strings and they are immutable
+s = :key
+puts s.class
+
+# only one copy of a symbol exists at a time
+t = :key
+puts s.object_id == t.object_id
+
+# convert string to symbol and vice versa
+puts s.to_s
+word = "wednesday"
+puts word.to_sym
+
+# btw "p var" is equivalent to "puts var.inspect"
