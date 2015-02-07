@@ -61,5 +61,11 @@ sentence = "I used to live in 30303 but now I live in 30043"
 zipcodes = sentence.scan(/\d{5}/)
 puts zipcodes.to_s
 
+# the scan() method also accepts a block
+zipcodes = sentence.scan(/\d{5}/) { |match| puts "A zipcode: #{match}" }
+
 # use parentheses to capture groups 
+# scan() method returns an array of arrays
+phone_nums =  "678.407.5000 678.407.5001"
+p phone_nums.scan(/(\d{3})\.(\d{3})\.(\d{4})/)
 
