@@ -16,16 +16,39 @@ module GameDepot
 
     def discount()
       if Time.now.strftime("%A") == "Sunday"
-        return 0.8*price
+        0.8*price
       else
-        return price 
+        price 
       end
     end
   end
-
+  
+  class GameConsole
+    attr_reader :maker
+    attr_reader :name
+    
+    def initialize(maker,name,price)
+      @maker = maker
+      @name = name
+      @price = price
+    end
+    
+    def price
+      @price
+    end
+    
+    def price=(new_price)
+      @price = new_price
+    end
+  end  
+  
 end
 
 
 tetris = GameDepot::Game.new("Tetris",100,"Puzzle")
 puts tetris.discount
 puts tetris.title
+
+wii = GameDepot::GameConsole.new("Nintendo","Wii",300)
+wii.price = 200
+puts "New price for Wii is #{wii.price}"
