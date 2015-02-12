@@ -40,18 +40,14 @@ class Semester
     end
   end
    
-  # return Banner semesters digit string in array
-  # Banner is a program used to register for courses
-  # this method returns the eight most "convenient"
-  # semesters to show on Banner
-  # e.g. on december, the next spring semester is display on Banner
-  def banner_semesters_indigit(num)
-    
+  # return past semesters in array (in digits format e.g. 201502)
+  def past_semesters_indigit(num)
+    raise NotImplementedError
   end
   
-  # return Banner semesters alphabet string in array
-  def banner_semesters_inalpha(num)
-    
+  # return past semesters in array (in alphas format e.g. Spring 2015)
+  def past_semesters_inalpha(num)
+    raise NotImplementedError
   end
   
   def to_s

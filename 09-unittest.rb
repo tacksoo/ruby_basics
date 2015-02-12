@@ -6,7 +6,7 @@ class SemesterTest < Minitest::Test
   def test_current_semester
     spring2015 = Semester.new()
     assert_equal "201502", spring2015.indigit, "Works for spring 2015 (digits)"
-    assert_equal "Spring 2015", spring2015.indigit, "Works for spring 2015 (alphas)"
+    assert_equal "Spring 2015", spring2015.inalpha, "Works for spring 2015 (alphas)"
   end
   
   def test_fall_2010
@@ -22,4 +22,15 @@ class SemesterTest < Minitest::Test
      assert summer2016.inalpha.include? "Summer"
   end
   
+  def test_num_of_semeseters_starting_spring2013
+    spring2013 = Semester.new(Time.new("2013","02")) 
+    past = spring2013.past_semesters_indigits(4) 
+    assert_equal 4, past.length, "Returns the correct number of semesters starting from Spring 2013"
+  end
+  
+  def test_last_semester_starting_spring2013
+    spring2013 = Semester.new(Time.new("2013","02")) 
+    past = spring2013.past_semesters_inalpha(4)
+    assert_equal "Fall 2011", past.last, "Returns the correct last semester starting from Spring 2013"
+  end
 end
