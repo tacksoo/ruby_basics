@@ -50,6 +50,33 @@ class Semester
     raise NotImplementedError
   end
   
+  # return previous semester (e.g. 201302 returns 201208)
+  def previous_semester_indigit
+    year = @indigit[0..3]
+    term = @indigit[4..-1]
+    previous_semester = ""
+    if term == SPRING_START_MONTH
+      previous_semester = (year.to_i - 1).to_s + FALL_START_MONTH
+    elsif term == SUMMER_START_MONTH
+      previous_semester = year + SPRING_START_MONTH
+    else
+      previous_semester = year + SUMMER_START_MONTH
+    end
+  end
+  
+  def previous_semester_inalpha
+    year = @inalpha.split.last
+    term = @inalpha.split.first
+    previous_semester = ""
+    if term == "Spring" 
+      previous_semester = "Fall " + (year.to_i - 1).to_s
+    elsif term == "Summer"
+      previous_semester = "Spring " + year
+    else
+      previous_semester = "Summer " + year
+    end
+  end
+  
   def to_s
     "#{@inalpha} - #{@indigit}" 
   end

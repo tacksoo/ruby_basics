@@ -33,4 +33,16 @@ class SemesterTest < Minitest::Test
     past = spring2013.past_semesters_inalpha(4)
     assert_equal "Fall 2011", past.last, "Returns the correct last semester starting from Spring 2013"
   end
+  
+  def test_previous_semester_of_spring2011
+    spring2011 = Semester.new(Time.new("2011","03"))
+    previous = spring2011.previous_semester_inalpha
+    assert_equal "Fall 2010", previous, "Previous semester of Spring 2011 is Fall 2010" 
+  end
+  
+  def test_previous_semester_of_200902
+    spring2009 = Semester.new(Time.new("2009","02"))
+    previous = spring2009.previous_semester_indigit
+    assert_equal "200808", previous, "Previous semester of 200902 is 200808"
+  end
 end
