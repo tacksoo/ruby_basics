@@ -45,4 +45,16 @@ class SemesterTest < Minitest::Test
     previous = spring2009.previous_semester_indigit
     assert_equal "200808", previous, "Previous semester of 200902 is 200808"
   end
+  
+  def test_next_semester_of_202002
+    spring2020 = Semester.new(Time.new("2020","02"))
+    next_sem = spring2020.next_semester_indigit
+    assert_equal "202005",next_sem, "Next semester of 202002 is 202005"
+  end
+  
+  def test_next_semester_of_fall2015
+    fall2015 = Semester.new(Time.new("2015","08"))
+    next_sem = fall2015.next_semester_inalpha
+    assert_equal "Spring 2016",next_sem, "Next semester of Fall 2015 is Spring 2016"
+  end
 end

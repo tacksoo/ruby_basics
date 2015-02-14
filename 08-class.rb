@@ -64,6 +64,7 @@ class Semester
     end
   end
   
+  # return previous semester (e.g. Spring 2010 returns Fall 2009)
   def previous_semester_inalpha
     year = @inalpha.split.last
     term = @inalpha.split.first
@@ -74,6 +75,34 @@ class Semester
       previous_semester = "Spring " + year
     else
       previous_semester = "Summer " + year
+    end
+  end
+  
+  # return next semester (e.g. 201302 returns 201305)
+  def next_semester_indigit
+    year = @indigit[0..3]
+    term = @indigit[4..-1]
+    next_semester = ""
+    if term == FALL_START_MONTH
+      next_semester = (year.to_i + 1).to_s + SPRING_START_MONTH
+    elsif term == SUMMER_START_MONTH
+      next_semester = year + FALL_START_MONTH
+    else
+      next_semester = year + SUMMER_START_MONTH
+    end
+  end
+  
+  # return next semester (e.g. Fall 2020 returns Spring 2021)
+  def next_semester_inalpha
+    year = @inalpha.split.last
+    term = @inalpha.split.first
+    next_semester = ""
+    if term == "Fall" 
+      next_semester = "Spring " + (year.to_i + 1).to_s
+    elsif term == "Summer"
+      next_semester = "Fall " + year
+    else
+      next_semester =  "Summer " + year
     end
   end
   
