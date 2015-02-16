@@ -51,9 +51,9 @@ class Semester
   end
   
   # return previous semester (e.g. 201302 returns 201208)
-  def previous_semester_indigit
-    year = @indigit[0..3]
-    term = @indigit[4..-1]
+  def previous_semester_indigit(sem=@indigit)
+    year = sem[0..3]
+    term = sem[4..-1]
     previous_semester = ""
     if term == SPRING_START_MONTH
       previous_semester = (year.to_i - 1).to_s + FALL_START_MONTH
@@ -65,9 +65,9 @@ class Semester
   end
   
   # return previous semester (e.g. Spring 2010 returns Fall 2009)
-  def previous_semester_inalpha
-    year = @inalpha.split.last
-    term = @inalpha.split.first
+  def previous_semester_inalpha(sem=@inalpha)
+    year = sem.split.last
+    term = sem.split.first
     previous_semester = ""
     if term == "Spring" 
       previous_semester = "Fall " + (year.to_i - 1).to_s
