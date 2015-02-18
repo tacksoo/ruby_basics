@@ -14,6 +14,16 @@ f = 4.2
 # everything is an object in Ruby
 puts 42.equal? 40
 
+# check if nil
+puts 42.nil?
+
+# check if object is of a specific type
+puts 42.instance_of? Fixnum
+
+# check if object is a type of a superclass
+puts 42.is_a? Integer
+puts 42.kind_of? Integer
+
 # to find out the type of a variable, use the class() method
 42.class
 
