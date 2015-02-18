@@ -1,5 +1,12 @@
 # loops and iterators
 
+# loop
+loop do
+  print "Continue (y/n)?  > "
+  choice = $stdin.gets.chomp 
+  break if choice == 'n' 
+end
+
 # for-loop
 for x in 1..10
   puts x

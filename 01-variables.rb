@@ -62,6 +62,9 @@ puts s.reverse!
 # range
 (1..42).class
 
+# random number from range
+rand(1..42)  # random num from 1 to 42
+
 # arrays
 a = [ 3, 2, 1 ]
 
