@@ -30,6 +30,8 @@ end
 
 # print the column name of tables
 p Movie.column_names
+puts Movie.where(name: 'Scarface').to_a[1].attributes
+
 p Actor.column_names
 p Role.column_names
 p Movies_director.column_names
