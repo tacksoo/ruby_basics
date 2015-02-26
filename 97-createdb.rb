@@ -15,8 +15,8 @@ ActiveRecord::Base.establish_connection (
 )
 
 # create an empty database called ruby_basics
-ActiveRecord::Base.connection.create_database("ruby_basics")
-puts "Database 'ruby_basics' created"
+ActiveRecord::Base.connection.create_database("gamedepot")
+puts "Database 'gamedepot' created"
 
 # drop the database
-#ActiveRecord::Base.connection.drop_database("ruby_basics")
+#ActiveRecord::Base.connection.drop_database("gamedepot")
