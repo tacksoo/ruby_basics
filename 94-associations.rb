@@ -44,15 +44,29 @@ class Role < ActiveRecord::Base
 end
 
 # Find all directors of the movie 'Four Rooms'
-matrix = Movie.find_by(name: 'Four Rooms')
-matrix.directors.each do |d|
+rooms = Movie.find_by(name: 'Four Rooms')
+rooms.directors.each do |d|
   puts d.first_name + " " + d.last_name
 end
 
 # Find all movies starring Sigourney Weaver
 sig = Actor.find_by(first_name: 'Sigourney', last_name: 'Weaver')
-sig.movies.each do |m|
+sig.movies.order(:year).each do |m|
   puts m.name + " " + m.year.to_s
 end
 
 # Find cast list for 'Pulp Fiction'
+pulp = Movie.find_by(name: "Pulp Fiction")
+pulp_movieid = pulp.id
+
+pulp.roles.each do |r|
+  print r.role  + " ===> "# prints out role
+  actor_id = r.actor_id
+  actor = Actor.find_by(id: actor_id)
+  print actor.first_name + " "
+  puts actor.last_name
+end
+
+# What is the busiest year for Kevin Bacon?
+
+# List all movies by George Lucas
