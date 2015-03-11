@@ -66,3 +66,13 @@ puts reversed_words.to_s
 (1..10).each_slice(3) do |slice|
   puts slice.to_s
 end
+
+# use map() to reverse all words in an array
+words = [ "happy", "spring", "break"]
+words.map { |word| word.reverse }
+
+# use inject() to calculate average score
+scores = [ 88, 89, 100, 79, 93 ]
+total = scores.inject { |total,score| total += score }
+average = total/scores.length
+
