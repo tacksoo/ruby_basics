@@ -131,3 +131,7 @@ word = "wednesday"
 puts word.to_sym
 
 # btw "p var" is equivalent to "puts var.inspect"
+
+print "adds no new line"
+
+puts "adds a new line"
