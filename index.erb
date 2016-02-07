@@ -1,0 +1,21 @@
+<%# this is an embedded ruby comment %>
+<%# you can run embedded ruby using the erb command %> 
+
+<%# you can write ruby code in the following tags  %>
+<% 
+  name = "dude!" 
+  name.reverse!
+%>
+
+<%# and print it out in the following tags %>
+<%= name %>
+
+<%# most likely, the two types of tags will be mixed as in the following %>
+
+<% 10.times do |n| %>
+  <%= "<p>Going " + n.to_s + "</p>" %>
+<% end %>
+
+<p>That's it. Those are the three types of erb tags</p> 
+
+
